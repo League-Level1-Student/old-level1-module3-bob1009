@@ -28,7 +28,7 @@ public class Movie implements Comparable<Movie> {
 	}
 
 public String getTicketPrice() {
-		if (this.stars > 2) {
+		if (this.stars > 25) {
 			return "That will be $12 please.";
 		} else if (this.title.contains("Twilight")) {
 			return "This movie is so bad, we'll pay YOU to watch it!";
