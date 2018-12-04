@@ -2,6 +2,7 @@ import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -54,21 +55,23 @@ public class Jeopardy implements ActionListener {
 		// 5. Add the quizPanel to the frame
 		frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-		
+		JButton button1= createButton("200");
 		// 7. Add the firstButton to the quizPanel
-
+		frame.add(button1);
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
-
-		// 9. Use the secondButton variable to hold a button using the createButton
+		
+		// 9. Use the secondButton variable  hold a button using the createButton
 		// method
-
+		JButton button2= createButton("400");
+		
 		// 10. Add the secondButton to the quizPanel
-
+		frame.add(button2);
 		// 11. Add action listeners to the buttons (2 lines of code)
-
+		button1.addActionListener(this);
+		button2.addActionListener(this);
 		// 12. Write the code to complete the actionPerformed() method below
-
+		
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 		
 		 /*
@@ -80,21 +83,36 @@ public class Jeopardy implements ActionListener {
 		quizPanel.setLayout(new GridLayout(buttonCount + 1, 3));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height,
-				Toolkit.getDefaultToolkit().getScreenSize().width);
+				Toolkit.getDefnew JButton("temporary button");aultToolkit().getScreenSize().width);
 	}
 
+
+	private JButton button2(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private JButton button1(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	private JButton createButton(String dollarAmount) {
 		
 		// Create a new JButton
-
+		JButton button=new JButton();
 		// Set the text of the button to the dollarAmount
-
+		button.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
-
+		buttonCount+1;
 		// Return your new button instead of the temporary button
+		
+		return button();
+	}
 
-		return new JButton("temporary button");
+	private JButton newJButton() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -104,7 +122,13 @@ public class Jeopardy implements ActionListener {
 
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
-
+		if (buttonPressed = button1 ) {
+			e.getSource();
+			String answer1=JOptionPane.showMessageDialog("what is the top played game in 2018?");
+			if (answer1==("fortnite")) {
+				
+			}
+		}
 			// Call the askQuestion() method
  
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
