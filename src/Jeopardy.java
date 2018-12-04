@@ -22,7 +22,7 @@ import javax.swing.JPanel;
 
 
 
-/* Check out the Jeopardy Handout to see what the end result should look like: http://bit.ly/1bvnvd4 */
+/* Check out the Jeopardy Handout to see what the end result should look like: #http://bit.ly/1bvnvd4 */
 
 public class Jeopardy implements ActionListener {
 	private JButton firstButton;
@@ -83,8 +83,8 @@ public class Jeopardy implements ActionListener {
 		quizPanel.setLayout(new GridLayout(buttonCount + 1, 3));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height,
-				Toolkit.getDefnew JButton("temporary button");aultToolkit().getScreenSize().width);
-	}
+				Toolkit.getDefaultToolkit().getScreenSize().width);
+		}
 
 
 	private JButton button2(int i) {
@@ -104,10 +104,10 @@ public class Jeopardy implements ActionListener {
 		// Set the text of the button to the dollarAmount
 		button.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
-		buttonCount+1;
+		button(+1);
 		// Return your new button instead of the temporary button
 		
-		return button();
+		return button;
 	}
 
 	private JButton newJButton() {
@@ -122,11 +122,11 @@ public class Jeopardy implements ActionListener {
 
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
-		if (buttonPressed = button1 ) {
-			e.getSource();
-			String answer1=JOptionPane.showMessageDialog("what is the top played game in 2018?");
-			if (answer1==("fortnite")) {
-				
+//		if (buttonPressed = button1 ) {
+//			e.getSource();
+//			String answer1=JOptionPane.showMessageDialog("what is the top played game in 2018?");
+//			if (answer1==("fortnite")) {
+//				
 			}
 		}
 			// Call the askQuestion() method
