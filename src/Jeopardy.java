@@ -63,16 +63,16 @@ public class Jeopardy implements ActionListener {
 
 		// 9. Use the secondButton variable hold a button using the createButton
 		// method
-		
+
 		button2 = createButton("400");
-		
+
 		// 10. Add the secondButton to the quizPanel
 
 		quizPanel.add(button2);
 		// 11. Add action listeners to the buttons (2 lines of code)
 		button1.addActionListener(this);
 		button2.addActionListener(this);
-		//frame.pack();
+		// frame.pack();
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
@@ -82,99 +82,87 @@ public class Jeopardy implements ActionListener {
 		 * question
 		 */
 
-		//frame.pack();
+		// frame.pack();
 		quizPanel.setLayout(new GridLayout(buttonCount + 1, 3));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height,
 				Toolkit.getDefaultToolkit().getScreenSize().width);
 	}
 
-	private JButton button2(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private JButton button1(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	private JButton createButton(String dollarAmount) {
-		
+
 		// Create a new JButton
-		JButton button=new JButton();
+		JButton button = new JButton();
 		// Set the text of the button to the dollarAmount
 		button.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
-		buttonCount+=1;
+		buttonCount += 1;
 		// Return your new button instead of the temporary button
-		
+
 		return button;
 	}
 
-	private JButton newJButton() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public void actionPerformed(ActionEvent e) {
-		
 
 		
-		JButton buttonPressed = (JButton) e.getSource();
-		// If the buttonPressed was the firstButton
-		if (buttonPressed == button1) {
-		e.getSource();
-		
-
-	// Call the askQuestion() method
-	askQuestion("what's the first nintendo consle sold?","the nintendo entetainment system", 200);}
-	// Complete the code in the askQuestion() method. When you play the game, the
-	// score should change.
-
-	// If the buttonPressed was the secondButton
-		if (buttonPressed == button2) {
-			e.getSource();
-			askQuestion("what was the first 3D mario sandbox game","mario 64" , 400);
+		// Complete the code in the askQuestion() method. When you play the game, the
+		// score should change.
+if (e.getSource()==button1) {
+askQuestion("what's the first nintendo consle sold?", "the NES", 200);
+	
+}
+		// If the buttonPressed was the secondButton
+		//if (buttonPressed == button2) {
+			if(e.getSource()==button2) {
+			askQuestion("what was the first 3D mario sandbox game", "mario 64", 400);}
 		}
+	
 	// Call the askQuestion() method with a harder question
 
 	// Clear the text on the button that was pressed (set the button text to
 	// nothing)
-//	button1.setText("");
-//	button2.setText("");
-	}
-	
+	// button1.setText("");
+	// button2.setText("");
+
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message and replace it with a pop-up that asks the user
 		// the question
-		playJeopardyTheme();
-		String answer1=JOptionPane.showInputDialog(null, "what was the first nintendo consle ever sold?");
+
+		String answer1 = JOptionPane.showInputDialog(null, question);
 		// Use the playJeopardyTheme() method to play music while the use thinks of an
 		// answer
 		playJeopardyTheme();
 		// Stop the theme music when they have entered their response. Hint: use the
 		// sound variable
-		sound.stop();
+
 		// If the answer is correct
-		if (answer1==("the nintendo entertainment system")){
+		if (answer1.equals(correctAnswer)) {
 			JOptionPane.showMessageDialog(null, "correct");
-			score+=200;
+			score += prizeMoney;
+			updateScore();
+			sound.stop();
 		}
 		// Increase the score by the prizeMoney
 
 		// Pop up a message to tell the user they were correct
 
 		// Otherwise
+		else {
+			JOptionPane.showMessageDialog(null,
+					"that's incorrrect. The correct answer is " + correctAnswer);
+			score -= prizeMoney;
+			updateScore();
+			sound.stop();
+		}
 
-		// Decrement the score by the prizeMoney
-
-		// Pop up a message to tell the user they were wrong and give them the correct
-		// answer
-
-		// Call the updateScore() method
-
+		
 	}
+	// Decrement the score by the prizeMoney
+
+	// Pop up a message to tell the user they were wrong and give them the correct
+	// answer
+
+	// Call the updateScore() method
 
 	public void playJeopardyTheme() {
 		try {
